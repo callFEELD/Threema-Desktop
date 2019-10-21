@@ -23,7 +23,7 @@ const BROWSER_WIDTH = 600;
 const BROWSER_HEIGHT = 600;
 const BROWSER_WIDTH_MIN = 400;
 const BROWSER_HEIGHT_MIN = 400;
-const THREEMA_ICON = "Threema.png";
+const THREEMA_ICON = "assets/img/Threema.png";
 
 /* Threema variables */
 const THREEMA_WEB_URL = "https://web.threema.ch";
@@ -60,6 +60,9 @@ function createTray() {
             }
         }
     ]);
+    tray.on('click', () => {
+        window.isVisible() ? window.hide() : window.show()
+    })
     tray.setToolTip(TITLE);
     tray.setContextMenu(contextMenu);
 }
@@ -108,11 +111,6 @@ function createWindow() {
     let contents = browserView.webContents;
     contents.on('did-finish-load', function () {
         contents.insertCSS(insertCSS);
-    });
-
-    window.on('minimize', function (event) {
-        event.preventDefault();
-        window.hide();
     });
 
     window.on('close', function (event) {
