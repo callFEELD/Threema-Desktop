@@ -17,10 +17,6 @@ const {
 const fs = require('fs');
 const path = require('path');
 
-
-/* Electron variables */
-let window;
-
 /* Settings variables */
 const TITLE = "Threema Desktop";
 const BROWSER_WIDTH = 600;
@@ -63,7 +59,7 @@ function createTray() {
                 app.quit();
             }
         }
-    ])
+    ]);
     tray.setToolTip(TITLE);
     tray.setContextMenu(contextMenu);
 }
