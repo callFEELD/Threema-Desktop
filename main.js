@@ -9,7 +9,9 @@
 const {
     app,
     BrowserWindow,
-    BrowserView
+    BrowserView,
+    Tray,
+    Menu
 } = require('electron');
 
 const fs = require('fs');
@@ -20,14 +22,51 @@ const path = require('path');
 let window;
 
 /* Settings variables */
+const TITLE = "Threema Desktop";
 const BROWSER_WIDTH = 600;
 const BROWSER_HEIGHT = 600;
 const BROWSER_WIDTH_MIN = 400;
 const BROWSER_HEIGHT_MIN = 400;
+const THREEMA_ICON = "Threema.png";
 
 /* Threema variables */
 const THREEMA_WEB_URL = "https://web.threema.ch";
 
+
+/* Global variables */
+// windows tray icon/object
+let tray = null;
+// main window
+let window = null;
+// Browserviewer for Web.Threema.Ch
+let browserView = null;
+
+/**
+ * This function will create the Tray at the windows
+ * task bar.
+ */
+function createTray() {
+    tray = new Tray(THREEMA_ICON)
+    const contextMenu = Menu.buildFromTemplate([{
+            label: 'Open Threema',
+            click: function () {
+                window.show();
+            }
+        },
+        {
+            type: 'separator'
+        },
+        {
+            label: 'Exit',
+            click: function () {
+                app.isQuiting = true;
+                app.quit();
+            }
+        }
+    ])
+    tray.setToolTip(TITLE);
+    tray.setContextMenu(contextMenu);
+}
 
 /**
  * This fucntion creates the electron window and the webview
@@ -36,6 +75,7 @@ const THREEMA_WEB_URL = "https://web.threema.ch";
 function createWindow() {
     // creating the main window
     window = new BrowserWindow({
+        title: TITLE,
         width: BROWSER_WIDTH,
         height: BROWSER_HEIGHT,
         minWidth: BROWSER_WIDTH_MIN,
@@ -47,13 +87,13 @@ function createWindow() {
     });
 
     // Creating the web view with the Threema web url
-    let browserView = new BrowserView();
+    browserView = new BrowserView();
     window.setBrowserView(browserView);
     browserView.setBounds({
         x: 0,
         y: 0,
-        width: BROWSER_WIDTH-20,
-        height: BROWSER_HEIGHT-38
+        width: BROWSER_WIDTH - 20,
+        height: BROWSER_HEIGHT - 38
     });
 
     // autoresize that the browserview fills the main window
@@ -64,18 +104,30 @@ function createWindow() {
     browserView.webContents.loadURL(THREEMA_WEB_URL);
 
     filePath = path.join(__dirname, 'assets/css/override.css');
-    insertCSS = fs.readFileSync(filePath, {encoding: 'utf-8'});
+    insertCSS = fs.readFileSync(filePath, {
+        encoding: 'utf-8'
+    });
 
     let contents = browserView.webContents;
     contents.on('did-finish-load', function () {
         contents.insertCSS(insertCSS);
     });
 
+    window.on('minimize', function (event) {
+        event.preventDefault();
+        window.hide();
+    });
 
-    // On windows close method
-    window.on('closed', function () {
-        window = null;
-    })
+    window.on('close', function (event) {
+        if (!app.isQuiting) {
+            event.preventDefault();
+            window.hide();
+        }
+
+        return false;
+    });
+
+    createTray();
 }
 
 // This method will be called when Electron has finished
