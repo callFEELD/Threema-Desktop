@@ -72,6 +72,7 @@ function createWindow() {
     // creating the main window
     window = new BrowserWindow({
         title: TITLE,
+        icon: THREEMA_ICON,
         width: BROWSER_WIDTH,
         height: BROWSER_HEIGHT,
         minWidth: BROWSER_WIDTH_MIN,
