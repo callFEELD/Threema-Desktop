@@ -12,13 +12,18 @@ const {
     BrowserView
 } = require('electron');
 
+const fs = require('fs');
+const path = require('path');
+
 
 /* Electron variables */
 let window;
 
 /* Settings variables */
-const BROWSER_WIDTH = 800;
+const BROWSER_WIDTH = 600;
 const BROWSER_HEIGHT = 600;
+const BROWSER_WIDTH_MIN = 400;
+const BROWSER_HEIGHT_MIN = 400;
 
 /* Threema variables */
 const THREEMA_WEB_URL = "https://web.threema.ch";
@@ -33,6 +38,8 @@ function createWindow() {
     window = new BrowserWindow({
         width: BROWSER_WIDTH,
         height: BROWSER_HEIGHT,
+        minWidth: BROWSER_WIDTH_MIN,
+        minHeight: BROWSER_HEIGHT_MIN,
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true
@@ -45,15 +52,24 @@ function createWindow() {
     browserView.setBounds({
         x: 0,
         y: 0,
-        width: BROWSER_WIDTH,
-        height: BROWSER_HEIGHT
+        width: BROWSER_WIDTH-20,
+        height: BROWSER_HEIGHT-38
     });
+
     // autoresize that the browserview fills the main window
     browserView.setAutoResize({
         width: true,
         height: true
     });
     browserView.webContents.loadURL(THREEMA_WEB_URL);
+
+    filePath = path.join(__dirname, 'assets/css/override.css');
+    insertCSS = fs.readFileSync(filePath, {encoding: 'utf-8'});
+
+    let contents = browserView.webContents;
+    contents.on('did-finish-load', function () {
+        contents.insertCSS(insertCSS);
+    });
 
 
     // On windows close method
