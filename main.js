@@ -9,20 +9,63 @@
 const {
     app,
     BrowserWindow,
-    BrowserView
+    BrowserView,
+    Tray,
+    Menu
 } = require('electron');
 
-
-/* Electron variables */
-let window;
+const fs = require('fs');
+const path = require('path');
 
 /* Settings variables */
-const BROWSER_WIDTH = 800;
+const TITLE = "Threema Desktop";
+const BROWSER_WIDTH = 600;
 const BROWSER_HEIGHT = 600;
+const BROWSER_WIDTH_MIN = 400;
+const BROWSER_HEIGHT_MIN = 400;
+const THREEMA_ICON = "assets/img/Threema.png";
 
 /* Threema variables */
 const THREEMA_WEB_URL = "https://web.threema.ch";
 
+
+/* Global variables */
+// windows tray icon/object
+let tray = null;
+// main window
+let window = null;
+// Browserviewer for Web.Threema.Ch
+let browserView = null;
+
+/**
+ * This function will create the Tray at the windows
+ * task bar.
+ */
+function createTray() {
+    tray = new Tray(THREEMA_ICON)
+    const contextMenu = Menu.buildFromTemplate([{
+            label: 'Open Threema',
+            click: function () {
+                window.show();
+            }
+        },
+        {
+            type: 'separator'
+        },
+        {
+            label: 'Exit',
+            click: function () {
+                app.isQuiting = true;
+                app.quit();
+            }
+        }
+    ]);
+    tray.on('click', () => {
+        window.isVisible() ? window.hide() : window.show()
+    })
+    tray.setToolTip(TITLE);
+    tray.setContextMenu(contextMenu);
+}
 
 /**
  * This fucntion creates the electron window and the webview
@@ -31,8 +74,12 @@ const THREEMA_WEB_URL = "https://web.threema.ch";
 function createWindow() {
     // creating the main window
     window = new BrowserWindow({
+        title: TITLE,
+        icon: THREEMA_ICON,
         width: BROWSER_WIDTH,
         height: BROWSER_HEIGHT,
+        minWidth: BROWSER_WIDTH_MIN,
+        minHeight: BROWSER_HEIGHT_MIN,
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true
@@ -40,14 +87,15 @@ function createWindow() {
     });
 
     // Creating the web view with the Threema web url
-    let browserView = new BrowserView();
+    browserView = new BrowserView();
     window.setBrowserView(browserView);
     browserView.setBounds({
         x: 0,
         y: 0,
-        width: BROWSER_WIDTH,
-        height: BROWSER_HEIGHT
+        width: BROWSER_WIDTH - 20,
+        height: BROWSER_HEIGHT - 38
     });
+
     // autoresize that the browserview fills the main window
     browserView.setAutoResize({
         width: true,
@@ -55,11 +103,26 @@ function createWindow() {
     });
     browserView.webContents.loadURL(THREEMA_WEB_URL);
 
+    filePath = path.join(__dirname, 'assets/css/override.css');
+    insertCSS = fs.readFileSync(filePath, {
+        encoding: 'utf-8'
+    });
 
-    // On windows close method
-    window.on('closed', function () {
-        window = null;
-    })
+    let contents = browserView.webContents;
+    contents.on('did-finish-load', function () {
+        contents.insertCSS(insertCSS);
+    });
+
+    window.on('close', function (event) {
+        if (!app.isQuiting) {
+            event.preventDefault();
+            window.hide();
+        }
+
+        return false;
+    });
+
+    createTray();
 }
 
 // This method will be called when Electron has finished
