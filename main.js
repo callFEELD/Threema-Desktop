@@ -1,129 +1,25 @@
 /**
- * Main.js
+ * Main application 
  * 
- * @author callFEELD
- * 
+ * @file            main.js
+ * @description     The main application will run the electron window and
+ *                  connect the various files and functions.
+ * @author          callFEELD
+ * @version         0.1
  */
 
+
+/**
+ * Imports
+ */
 // import of electron modules
-const {
-    app,
-    BrowserWindow,
-    BrowserView,
-    Tray,
-    Menu
-} = require('electron');
+const {app} = require('electron');
+// import window creation and window object
+let {
+    window, 
+    createWindow
+} = require('./src/window.js')
 
-const fs = require('fs');
-const path = require('path');
-
-/* Settings variables */
-const TITLE = "Threema Desktop";
-const BROWSER_WIDTH = 600;
-const BROWSER_HEIGHT = 600;
-const BROWSER_WIDTH_MIN = 400;
-const BROWSER_HEIGHT_MIN = 400;
-const THREEMA_ICON = "assets/img/Threema.png";
-
-/* Threema variables */
-const THREEMA_WEB_URL = "https://web.threema.ch";
-
-
-/* Global variables */
-// windows tray icon/object
-let tray = null;
-// main window
-let window = null;
-// Browserviewer for Web.Threema.Ch
-let browserView = null;
-
-/**
- * This function will create the Tray at the windows
- * task bar.
- */
-function createTray() {
-    tray = new Tray(THREEMA_ICON)
-    const contextMenu = Menu.buildFromTemplate([{
-            label: 'Open Threema',
-            click: function () {
-                window.show();
-            }
-        },
-        {
-            type: 'separator'
-        },
-        {
-            label: 'Exit',
-            click: function () {
-                app.isQuiting = true;
-                app.quit();
-            }
-        }
-    ]);
-    tray.on('click', () => {
-        window.isVisible() ? window.hide() : window.show()
-    })
-    tray.setToolTip(TITLE);
-    tray.setContextMenu(contextMenu);
-}
-
-/**
- * This fucntion creates the electron window and the webview
- * to the Threema Web site.
- */
-function createWindow() {
-    // creating the main window
-    window = new BrowserWindow({
-        title: TITLE,
-        icon: THREEMA_ICON,
-        width: BROWSER_WIDTH,
-        height: BROWSER_HEIGHT,
-        minWidth: BROWSER_WIDTH_MIN,
-        minHeight: BROWSER_HEIGHT_MIN,
-        autoHideMenuBar: true,
-        webPreferences: {
-            nodeIntegration: true
-        }
-    });
-
-    // Creating the web view with the Threema web url
-    browserView = new BrowserView();
-    window.setBrowserView(browserView);
-    browserView.setBounds({
-        x: 0,
-        y: 0,
-        width: BROWSER_WIDTH - 20,
-        height: BROWSER_HEIGHT - 38
-    });
-
-    // autoresize that the browserview fills the main window
-    browserView.setAutoResize({
-        width: true,
-        height: true
-    });
-    browserView.webContents.loadURL(THREEMA_WEB_URL);
-
-    filePath = path.join(__dirname, 'assets/css/override.css');
-    insertCSS = fs.readFileSync(filePath, {
-        encoding: 'utf-8'
-    });
-
-    let contents = browserView.webContents;
-    contents.on('did-finish-load', function () {
-        contents.insertCSS(insertCSS);
-    });
-
-    window.on('close', function (event) {
-        if (!app.isQuiting) {
-            event.preventDefault();
-            window.hide();
-        }
-
-        return false;
-    });
-
-    createTray();
-}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -142,7 +38,7 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (mainWindow === null) {
+    if (window === null) {
         createWindow();
     }
 });
