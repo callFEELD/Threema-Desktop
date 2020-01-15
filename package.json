@@ -39,6 +39,6 @@
     "win": {
       "target": "NSIS",
       "icon": "build/threema.ico"
-   }
+    }
   }
 }
