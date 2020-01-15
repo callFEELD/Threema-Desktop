@@ -23,6 +23,7 @@ BROWSER_HEIGHT =      600;
 BROWSER_WIDTH_MIN =   400;
 BROWSER_HEIGHT_MIN =  400;
 THREEMA_ICON =        "assets/img/Threema.png";
+CSS_OVERRIDE_FILE =   "assets/css/override.css";
 // main window settings
 exports.WINDOW_SETTINGS = {
     title: TITLE,
@@ -59,3 +60,4 @@ module.exports.BROWSER_HEIGHT = BROWSER_HEIGHT;
 module.exports.BROWSER_WIDTH_MIN = BROWSER_WIDTH_MIN;
 module.exports.BROWSER_HEIGHT_MIN = BROWSER_HEIGHT_MIN;
 module.exports.THREEMA_ICON = THREEMA_ICON;
+module.exports.CSS_OVERRIDE_FILE = CSS_OVERRIDE_FILE;

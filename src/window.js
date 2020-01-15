@@ -16,7 +16,8 @@ const{
     WINDOW_SETTINGS,
     BROWSER_VIEW_BOUNDS,
     BROWSER_VIEW_AUTO_RESIZE,
-    THREEMA_WEB_URL
+    THREEMA_WEB_URL,
+    CSS_OVERRIDE_FILE
 } = require('./vars.js');
 
 // import of electron modules
@@ -69,7 +70,7 @@ function createWindow() {
     createTray(window);
 
     // load the override css file
-    filePath = path.join(__dirname, '../assets/css/override.css');
+    filePath = path.join(CSS_OVERRIDE_FILE);
     overrideCSS = fs.readFileSync(filePath, {
         encoding: 'utf-8'
     });
