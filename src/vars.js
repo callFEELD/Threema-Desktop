@@ -7,7 +7,7 @@
  * @version         0.1
  */
 
- 
+
 /**
  * Threema variables 
  */
@@ -17,12 +17,13 @@ exports.THREEMA_WEB_URL = "https://web.threema.ch";
 /**
  * Window Settings variables 
  */
-exports.TITLE =               "Threema Desktop";
-exports.BROWSER_WIDTH =       600;
-exports.BROWSER_HEIGHT =      600;
-exports.BROWSER_WIDTH_MIN =   400;
-exports.BROWSER_HEIGHT_MIN =  400;
-exports.THREEMA_ICON =        "assets/img/Threema.png";
+TITLE =               "Threema Desktop";
+BROWSER_WIDTH =       600;
+BROWSER_HEIGHT =      600;
+BROWSER_WIDTH_MIN =   400;
+BROWSER_HEIGHT_MIN =  400;
+THREEMA_ICON =        "assets/img/Threema.png";
+CSS_OVERRIDE_FILE =   "assets/css/override.css";
 // main window settings
 exports.WINDOW_SETTINGS = {
     title: TITLE,
@@ -48,3 +49,15 @@ exports.BROWSER_VIEW_AUTO_RESIZE = {
     width: true,
     height: true
 };
+
+
+/**
+ * Exports
+ */
+module.exports.TITLE = TITLE;
+module.exports.BROWSER_WIDTH = BROWSER_WIDTH;
+module.exports.BROWSER_HEIGHT = BROWSER_HEIGHT;
+module.exports.BROWSER_WIDTH_MIN = BROWSER_WIDTH_MIN;
+module.exports.BROWSER_HEIGHT_MIN = BROWSER_HEIGHT_MIN;
+module.exports.THREEMA_ICON = THREEMA_ICON;
+module.exports.CSS_OVERRIDE_FILE = CSS_OVERRIDE_FILE;
