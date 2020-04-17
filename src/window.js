@@ -74,7 +74,7 @@ function addBrowserViewEvents(browserView) {
 
     // catches notifications and displays them
     ipcMain.on("notification-show",  function (event, arg) {
-        let note = new Notification({icon: path.join(__dirname, "../assets/img/threema_128.png")});
+        let note = new Notification({icon: path.join("assets/img/threema_128.png")});
         note.title = arg.title;
         note.body = arg.options.body;
         note.show();
