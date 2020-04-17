@@ -12,7 +12,8 @@
     "dist": "electron-builder"
   },
   "dependencies": {
-    "electron-notification-shim": "^1.1.0"
+    "electron-notification-shim": "^1.1.0",
+    "minimist": "^1.2.3"
   },
   "devDependencies": {
     "electron": "5.0.0-beta.7",
