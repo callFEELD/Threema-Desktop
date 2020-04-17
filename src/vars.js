@@ -1,6 +1,6 @@
 /**
  * Variables and Constants
- * 
+ *
  * @file            src/vars.js
  * @description     This file contains all global or constant variables.
  * @author          callFEELD
@@ -9,20 +9,20 @@
 
 
 /**
- * Threema variables 
+ * Threema variables
  */
 exports.THREEMA_WEB_URL = "https://web.threema.ch";
 
 
 /**
- * Window Settings variables 
+ * Window Settings variables
  */
 TITLE =               "Threema Desktop";
 BROWSER_WIDTH =       600;
 BROWSER_HEIGHT =      600;
 BROWSER_WIDTH_MIN =   400;
 BROWSER_HEIGHT_MIN =  400;
-THREEMA_ICON =        "assets/img/Threema.png";
+THREEMA_ICON =        "assets/img/threema_32.png";
 CSS_OVERRIDE_FILE =   "assets/css/override.css";
 // main window settings
 exports.WINDOW_SETTINGS = {
@@ -36,12 +36,13 @@ exports.WINDOW_SETTINGS = {
     webPreferences: {
         nodeIntegration: true
     }
+
 };
 // browser view bounds settings
 exports.BROWSER_VIEW_BOUNDS = {
     x: 0,
     y: 0,
-    width: BROWSER_WIDTH - 20,
+    width: BROWSER_WIDTH - 16,
     height: BROWSER_HEIGHT - 34
 };
 // browser view auto resize settings
