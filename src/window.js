@@ -18,7 +18,7 @@ const{
     BROWSER_VIEW_AUTO_RESIZE,
     THREEMA_WEB_URL,
     CSS_OVERRIDE_FILE
-} = require('./vars.js');
+} = require("./vars.js");
 
 // import of electron modules
 const {
@@ -28,14 +28,14 @@ const {
     shell,
     Notification,
     ipcMain
-} = require('electron');
+} = require("electron");
 
 // import Tray
-let {createTray} = require('./tray.js');
+let {createTray} = require("./tray.js");
 
 // path and fs needed for the icon
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 
 /**

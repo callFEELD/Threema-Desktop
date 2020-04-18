@@ -1,4 +1,4 @@
-const ipc = require('electron').ipcRenderer;
+const ipc = require("electron").ipcRenderer;
 
 var Notification = function(title,ops) {
     ipc.send("notification-show", {title: title, options: ops});
