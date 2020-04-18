@@ -14,17 +14,17 @@
  * Imports
  */
  // import variables
-const{ 
+const{
     TITLE,
     THREEMA_ICON
-} = require('./vars.js');
+} = require("./vars.js");
 
 // import of electron modules
 const {
     app,
     Tray,
     Menu
-} = require('electron');
+} = require("electron");
 
 
 /**
@@ -47,20 +47,20 @@ let tray = null;
  * @return none
  */
 function createTray(window) {
-    // The context menu is containing displayed menu 
+    // The context menu is containing displayed menu
     // when clicking on the Tray.
     const contextMenuTemplate = [
         {
-            label: 'Open Threema',
+            label: "Open Threema",
             click: function () {
                 window.show();
             }
         },
         {
-            type: 'separator'
+            type: "separator"
         },
         {
-            label: 'Exit',
+            label: "Exit",
             click: function () {
                 app.isQuiting = true;
                 app.quit();
@@ -76,7 +76,7 @@ function createTray(window) {
 
     // add the onclick event, not available on linux
     // on click -> show or hide the window
-    tray.on('click', () => {
+    tray.on("click", () => {
         window.isVisible() ? window.hide() : window.show()
     });
 }

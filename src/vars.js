@@ -11,21 +11,21 @@
 /**
  * Threema variables
  */
-exports.THREEMA_WEB_URL = "https://web.threema.ch";
+let THREEMA_WEB_URL = "https://web.threema.ch";
 
 
 /**
  * Window Settings variables
  */
-TITLE =               "Threema Desktop";
-BROWSER_WIDTH =       600;
-BROWSER_HEIGHT =      600;
-BROWSER_WIDTH_MIN =   400;
-BROWSER_HEIGHT_MIN =  400;
-THREEMA_ICON =        "assets/img/threema_32.png";
-CSS_OVERRIDE_FILE =   "assets/css/override.css";
+let TITLE =               "Threema Desktop";
+let BROWSER_WIDTH =       600;
+let BROWSER_HEIGHT =      600;
+let BROWSER_WIDTH_MIN =   400;
+let BROWSER_HEIGHT_MIN =  400;
+let THREEMA_ICON =        "assets/img/threema_32.png";
+let CSS_OVERRIDE_FILE =   "assets/css/override.css";
 // main window settings
-exports.WINDOW_SETTINGS = {
+let WINDOW_SETTINGS = {
     title: TITLE,
     icon: THREEMA_ICON,
     width: BROWSER_WIDTH,
@@ -39,14 +39,14 @@ exports.WINDOW_SETTINGS = {
 
 };
 // browser view bounds settings
-exports.BROWSER_VIEW_BOUNDS = {
+let BROWSER_VIEW_BOUNDS = {
     x: 0,
     y: 0,
     width: BROWSER_WIDTH - 16,
     height: BROWSER_HEIGHT - 34
 };
 // browser view auto resize settings
-exports.BROWSER_VIEW_AUTO_RESIZE = {
+let BROWSER_VIEW_AUTO_RESIZE = {
     width: true,
     height: true
 };
@@ -55,6 +55,7 @@ exports.BROWSER_VIEW_AUTO_RESIZE = {
 /**
  * Exports
  */
+module.exports.THREEMA_WEB_URL = THREEMA_WEB_URL;
 module.exports.TITLE = TITLE;
 module.exports.BROWSER_WIDTH = BROWSER_WIDTH;
 module.exports.BROWSER_HEIGHT = BROWSER_HEIGHT;
@@ -62,3 +63,7 @@ module.exports.BROWSER_WIDTH_MIN = BROWSER_WIDTH_MIN;
 module.exports.BROWSER_HEIGHT_MIN = BROWSER_HEIGHT_MIN;
 module.exports.THREEMA_ICON = THREEMA_ICON;
 module.exports.CSS_OVERRIDE_FILE = CSS_OVERRIDE_FILE;
+
+module.exports.WINDOW_SETTINGS = WINDOW_SETTINGS;
+module.exports.BROWSER_VIEW_BOUNDS = BROWSER_VIEW_BOUNDS;
+module.exports.BROWSER_VIEW_AUTO_RESIZE = BROWSER_VIEW_AUTO_RESIZE;
