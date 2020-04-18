@@ -18,7 +18,7 @@ const{
     BROWSER_VIEW_AUTO_RESIZE,
     THREEMA_WEB_URL,
     CSS_OVERRIDE_FILE
-} = require('./vars.js');
+} = require("./vars.js");
 
 // import of electron modules
 const {
@@ -28,14 +28,14 @@ const {
     shell,
     Notification,
     ipcMain
-} = require('electron');
+} = require("electron");
 
 // import Tray
-let {createTray} = require('./tray.js');
+let {createTray} = require("./tray.js");
 
 // path and fs needed for the icon
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 
 /**
@@ -56,30 +56,32 @@ let browserView = null;
  */
 function addBrowserViewEvents(browserView) {
     // load the override css file
-    filePath = path.join(CSS_OVERRIDE_FILE);
-    overrideCSS = fs.readFileSync(filePath, {
-        encoding: 'utf-8'
+    let filePath = path.join(CSS_OVERRIDE_FILE);
+    let overrideCSS = fs.readFileSync(filePath, {
+        encoding: "utf-8"
     });
 
     // when the content is loaded, insert the override css
     let contents = browserView.webContents;
-    contents.on('did-finish-load', function () {
+    contents.on("did-finish-load", function () {
         contents.insertCSS(overrideCSS);
     });
 
     // open links in the default browser
-    contents.on('new-window', (event, url, frameName, disposition, options, additionalFeatures) => {
+    contents.on("new-window", (event, url, frameName, disposition, options, additionalFeatures) => {
         shell.openExternal(url);
     });
 
     // catches notifications and displays them
     ipcMain.on("notification-show",  function (event, arg) {
-        let note = new Notification({icon: path.join("assets/img/threema_128.png")});
+        let note = new Notification({
+            icon: path.join("assets/img/threema_128.png")
+        });
         note.title = arg.title;
         note.body = arg.options.body;
         note.show();
 
-        note.on('click', function(){
+        note.on("click", function(){
             window.show();
         });
     });
@@ -126,7 +128,7 @@ function createWindow() {
 
     // prevent the app to close, when the close button is clicked
     // only minimize the application
-    window.on('close', function (event) {
+    window.on("close", function (event) {
         if (!app.isQuiting) {
             event.preventDefault();
             window.hide();
