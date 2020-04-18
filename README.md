@@ -17,7 +17,7 @@ This application opening [Threema Web](https://web.threema.ch/) inside and all t
 + **Save images or files** | Files and images can be locally stored
 + **Links will open in the default webbrowser**
 
-![ThreemaDekstopApplication](https://raw.githubusercontent.com/callFEELD/Threema-Desktop/master/docs/img/Threema-Desktop-application.jpg?token=AGCZAMFQFG3NND44SVPAEMS6FC4XY)
+![ThreemaDekstopApplication](https://raw.githubusercontent.com/callFEELD/Threema-Desktop/master/docs/img/Threema-Desktop.jpg)
 
 ## Installation
 ### ![Windows](https://cdn0.iconfinder.com/data/icons/logos-brands-2/48/logo_brand_brands_logos_microsoft_windows-48.png)
