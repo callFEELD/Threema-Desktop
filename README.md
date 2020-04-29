@@ -34,12 +34,12 @@ git clone https://github.com/callFEELD/Threema-Desktop/
 
 Install the dependencies
 ```bash
-npm install
+yarn install
 ```
 
 Build it for your platform
 ```
-npm dist
+yarn dist
 ```
 
 Look at the created `dist/` folder for the build application.
