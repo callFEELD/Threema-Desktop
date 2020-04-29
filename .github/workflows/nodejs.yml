@@ -27,5 +27,7 @@ jobs:
           yarn install
 
       - name: yarn dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn dist
