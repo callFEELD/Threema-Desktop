@@ -3,8 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8444aafd57b24f00aa54200d534ae8a6)](https://www.codacy.com/manual/callfeeld/Threema-Desktop?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=callFEELD/Threema-Desktop&amp;utm_campaign=Badge_Grade)
 ![Build](https://github.com/callFEELD/Threema-Desktop/workflows/Build/badge.svg)
 
-A desktop application for Threema similar to Whatsapp or Telegram.
-This application opening [Threema Web](https://web.threema.ch/) inside and all the traffic is going through the threema website.
+A desktop application for [Threema Web](https://web.threema.ch/) similar to Whatsapp or Telegram.
 
 ## Supported Platforms
 ![Windows](https://cdn0.iconfinder.com/data/icons/logos-brands-2/48/logo_brand_brands_logos_microsoft_windows-48.png)
