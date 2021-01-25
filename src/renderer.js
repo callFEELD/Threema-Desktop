@@ -1,8 +1,13 @@
 const ipc = require("electron").ipcRenderer;
 
-var Notification = function(title,ops) {
-    ipc.send("notification-show", {title: title, options: ops});
-};
-Notification.requestPermission = () => {};
-Notification.permission = "granted";
+class Notification {
+    static permission = 'granted';
+
+    constructor(title, ops) {
+        ipc.send("notification-show", {title: title, options: ops});
+    }
+}
+
+Notification.requestPermission = window.Notification.requestPermission;
+Notification.close = window.Notification.close;
 window.Notification = Notification;

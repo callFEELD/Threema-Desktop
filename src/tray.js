@@ -6,7 +6,6 @@
  *                  instead of closing the window. With the tray it is possible
  *                  to exit the application.
  * @author          callFEELD
- * @version         0.1
  */
 
 

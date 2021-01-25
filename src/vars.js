@@ -4,9 +4,9 @@
  * @file            src/vars.js
  * @description     This file contains all global or constant variables.
  * @author          callFEELD
- * @version         0.1
  */
 
+const path = require("path");
 
 /**
  * Threema variables
@@ -33,22 +33,11 @@ let WINDOW_SETTINGS = {
     minWidth: BROWSER_WIDTH_MIN,
     minHeight: BROWSER_HEIGHT_MIN,
     autoHideMenuBar: true,
+    frame: true,
     webPreferences: {
-        nodeIntegration: true
-    }
-
-};
-// browser view bounds settings
-let BROWSER_VIEW_BOUNDS = {
-    x: 0,
-    y: 0,
-    width: BROWSER_WIDTH - 16,
-    height: BROWSER_HEIGHT - 34
-};
-// browser view auto resize settings
-let BROWSER_VIEW_AUTO_RESIZE = {
-    width: true,
-    height: true
+        preload: path.join(__dirname, "renderer.js")
+    },
+    backgroundColor: "#2A2A2E"
 };
 
 
@@ -65,5 +54,3 @@ module.exports.THREEMA_ICON = THREEMA_ICON;
 module.exports.CSS_OVERRIDE_FILE = CSS_OVERRIDE_FILE;
 
 module.exports.WINDOW_SETTINGS = WINDOW_SETTINGS;
-module.exports.BROWSER_VIEW_BOUNDS = BROWSER_VIEW_BOUNDS;
-module.exports.BROWSER_VIEW_AUTO_RESIZE = BROWSER_VIEW_AUTO_RESIZE;
