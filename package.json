@@ -4,7 +4,7 @@
   "description": "Implementation of web.threema.ch into a Desktop Client using electron js",
   "keywords": [],
   "main": "./main.js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "callFEELD",
   "scripts": {
     "start": "electron .",
