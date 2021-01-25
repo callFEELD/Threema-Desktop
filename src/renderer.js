@@ -1,10 +1,13 @@
 const ipc = require("electron").ipcRenderer;
 
 class Notification {
-    static permission = 'granted';
+    static permission = "granted";
 
     constructor(title, ops) {
-        ipc.send("notification-show", {title: title, options: ops});
+        ipc.send("notification-show", {
+            title: title,
+            options: ops
+        });
     }
 }
 
