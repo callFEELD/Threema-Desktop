@@ -5,7 +5,6 @@
  * @description     The main application will run the electron window and
  *                  connect the various files and functions.
  * @author          callFEELD
- * @version         0.1
  */
 
 
@@ -38,7 +37,7 @@ if (!gotTheLock) {
     // This method will be called when Electron has finished
     // initialization and is ready to create browser windows.
     // Some APIs can only be used after this event occurs.
-    app.on("ready", createWindow);
+    app.whenReady().then(createWindow);
 
 
     // Quit when all windows are closed.

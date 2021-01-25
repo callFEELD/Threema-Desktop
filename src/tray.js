@@ -6,7 +6,6 @@
  *                  instead of closing the window. With the tray it is possible
  *                  to exit the application.
  * @author          callFEELD
- * @version         0.1
  */
 
 
@@ -52,7 +51,7 @@ function createTray(window) {
     const contextMenuTemplate = [
         {
             label: "Open Threema",
-            click: function () {
+            click: () => {
                 window.show();
             }
         },
@@ -61,7 +60,7 @@ function createTray(window) {
         },
         {
             label: "Exit",
-            click: function () {
+            click: () => {
                 app.isQuiting = true;
                 app.quit();
             }
@@ -77,7 +76,7 @@ function createTray(window) {
     // add the onclick event, not available on linux
     // on click -> show or hide the window
     tray.on("click", () => {
-        window.isVisible() ? window.hide() : window.show()
+        window.isVisible() ? window.hide() : window.show();
     });
 }
 

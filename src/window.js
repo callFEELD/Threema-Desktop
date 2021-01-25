@@ -5,7 +5,6 @@
  * @description     The main window will add the Browser View to the
  *                  web.threema.ch website.
  * @author          callFEELD
- * @version         0.2
  */
 
 /**
@@ -14,8 +13,6 @@
 // import variables
 const{
     WINDOW_SETTINGS,
-    BROWSER_VIEW_BOUNDS,
-    BROWSER_VIEW_AUTO_RESIZE,
     THREEMA_WEB_URL,
     CSS_OVERRIDE_FILE
 } = require("./vars.js");
@@ -24,7 +21,6 @@ const{
 const {
     app,
     BrowserWindow,
-    BrowserView,
     shell,
     Notification,
     ipcMain
@@ -43,8 +39,6 @@ const path = require("path");
  */
 // main window object
 let window = null;
-// Browserviewer object for Web.Threema.Ch
-let browserView = null;
 
 /**
  * Functions
@@ -54,7 +48,7 @@ let browserView = null;
  * @param browserView
  * @return none
  */
-function addBrowserViewEvents(browserView) {
+function addWindowViewEvents(window) {
     // load the override css file
     let filePath = path.join(CSS_OVERRIDE_FILE);
     let overrideCSS = fs.readFileSync(filePath, {
@@ -62,13 +56,14 @@ function addBrowserViewEvents(browserView) {
     });
 
     // when the content is loaded, insert the override css
-    let contents = browserView.webContents;
+    let contents = window.webContents;
     contents.on("did-finish-load", function () {
         contents.insertCSS(overrideCSS);
     });
 
     // open links in the default browser
     contents.on("new-window", (event, url, frameName, disposition, options, additionalFeatures) => {
+        event.preventDefault();
         shell.openExternal(url);
     });
 
@@ -81,30 +76,12 @@ function addBrowserViewEvents(browserView) {
         note.body = arg.options.body;
         note.show();
 
+        window.flashFrame(true);
+
         note.on("click", function(){
             window.show();
         });
     });
-}
-
-/**
- * This fucntion creates the browser view which displays
- * the Threema Website.
- * @param none
- * @return browserView
- */
-function createBrowserView() {
-    browserView = new BrowserView({
-        webPreferences: {
-            preload: path.join(__dirname, "renderer.js")
-        }
-    });
-    browserView.setBounds(BROWSER_VIEW_BOUNDS);
-    browserView.setAutoResize(BROWSER_VIEW_AUTO_RESIZE);
-    browserView.webContents.loadURL(THREEMA_WEB_URL);
-
-    addBrowserViewEvents(browserView);
-    return browserView;
 }
 
 /**
@@ -117,11 +94,9 @@ function createWindow() {
     // creating the main window
     window = new BrowserWindow(WINDOW_SETTINGS);
 
-    // Creating the web view with the Threema web url
-    broserView = createBrowserView();
+    window.loadURL(THREEMA_WEB_URL);
 
-    // add the browserview to the window
-    window.setBrowserView(browserView);
+    addWindowViewEvents(window);
 
     // create the tray
     createTray(window);
@@ -134,6 +109,10 @@ function createWindow() {
             window.hide();
         }
         return false;
+    });
+
+    window.on("show", function (event) {
+        window.flashFrame(false);
     });
 }
 
