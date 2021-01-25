@@ -11,14 +11,11 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
-  "dependencies": {
-    "electron-notification-shim": "^1.1.0",
-    "minimist": "^1.2.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "electron": "7.2.4",
-    "electron-builder": "^22.2.0",
-    "electron-packager": "^14.0.6"
+    "electron": "11.2.1",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.2.0"
   },
   "build": {
     "files": [
@@ -43,7 +40,16 @@
     ],
     "win": {
       "target": "NSIS",
-      "icon": "build/threema.ico"
+      "icon": "assets/img/threema.ico"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callFEELD/Threema-Desktop.git"
+  },
+  "license": "GPL-3.0 License",
+  "bugs": {
+    "url": "https://github.com/callFEELD/Threema-Desktop/issues"
+  },
+  "homepage": "https://github.com/callFEELD/Threema-Desktop#readme"
 }
