@@ -23,7 +23,7 @@
 
   /* chat selection list: */
   #navigation-header {
-    background-color: #222222 !important;
+    background-color: #272727 !important;
   }
 
   #navigation-conversations {
@@ -38,8 +38,8 @@
   #navigation-conversations .conversation-wrapper .conversation.active,
   #navigation-conversations .conversation-wrapper .conversation:hover,
   #navigation-contacts .contact:hover {
-    border-color: #222222 !important;
-    background-color: #222222 !important;
+    border-color: #272727 !important;
+    background-color: #272727 !important;
   }
 
   #navigation-conversations
@@ -80,7 +80,7 @@
   }
 
   #navigation-conversations .conversation-wrapper {
-    border-bottom: 1px solid #222222 !important;
+    border-bottom: 1px solid #272727 !important;
   }
 
   .material-icons.md-dark {
@@ -100,7 +100,7 @@
   }
 
   .verification-dots div {
-    background-color: #222 !important;
+    background-color: #272727 !important;
   }
   .verification-dots.level2 div:nth-of-type(1),
   .verification-dots.level2 div:nth-of-type(2) {
@@ -119,11 +119,11 @@
 
   /* chat history: */
   #messenger #detail > div.ng-scope .detail-header {
-    background-color: #121212 !important;
+    background-color: #272727 !important;
   }
 
   compose-area > div:first-child > div:nth-of-type(2) {
-    background-color: #121212 !important;
+    background-color: #272727 !important;
     border: 1px solid #323232 !important;
   }
 
@@ -135,28 +135,28 @@
   }
 
   #conversation #conversation-footer {
-    background-color: #222 !important;
+    background-color: #121212 !important;
     z-index: 2;
   }
 
   #conversation-chat .chat .message-in .message-body {
-    background-color: #121212 !important;
+    background-color: #666666 !important;
   }
   #conversation-chat .chat .message-in .bubble-triangle::before,
   #conversation-chat .chat .message-in .bubble-triangle::after {
-    background-color: #121212 !important;
+    background-color: #666666 !important;
   }
 
   #conversation-chat .chat .message-out .message-body {
-    background-color: hsl(103, 44%, 11%) !important;
+    background-color: #303030 !important;
   }
   #conversation-chat .chat .message-out .bubble-triangle::before,
   #conversation-chat .chat .message-out .bubble-triangle::after {
-    background-color: hsl(103, 44%, 11%) !important;
+    background-color: #303030 !important;
   }
 
   #conversation-chat .chat .message-status .message-body {
-    background-color: hsl(50, 81%, 8%) !important;
+    background-color: #ECE7C9 !important;
   }
 
   .message-body .message-quote .message-quote-content {
@@ -168,7 +168,7 @@
 
   #conversation {
     background-image: none !important;
-    background-color: #222 !important;
+    background-color: #121212 !important;
   }
   #conversation::before {
     background-image: url("../img/wallpaper_light.png?") !important;
@@ -183,11 +183,11 @@
   }
 
   .twemoji-picker {
-    background-color: #222 !important;
+    background-color: #272727 !important;
   }
   .twemoji-picker .tab label {
-    border: 1px solid #222 !important;
-    background: #222 !important;
+    border: 1px solid #272727 !important;
+    background: #272727 !important;
   }
   .twemoji-picker .tab [type="radio"]:checked ~ label {
     background: #121212 !important;
@@ -198,7 +198,7 @@
   }
 
   #conversation #conversation-quote {
-    background-color: #121212 !important;
+    background-color: #1F1F1F !important;
   }
 
   /* menu: */
@@ -215,7 +215,7 @@
   }
 
   .md-subheader.md-threema-theme {
-    background-color: #222 !important;
+    background-color: #272727 !important;
   }
 
   .md-button.md-threema-theme.md-primary {
@@ -235,11 +235,11 @@
   }
 
   #messenger #detail > div.ng-scope {
-    background-color: #222 !important;
+    background-color: #272727 !important;
   }
 
   .md-button.md-threema-theme.md-raised {
-    background-color: #222 !important;
+    background-color: #272727 !important;
     color: rgba(255, 255, 255, 0.87) !important;
   }
   .md-button.md-threema-theme.md-warn.md-fab,
