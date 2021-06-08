@@ -100,13 +100,13 @@
     background-color: #e0e0e0 !important;
   }
 
+  .verification-dots.level3 div {
+    background-color: #10a65e !important;
+  }
+
   .verification-dots.level2 div:nth-of-type(1),
   .verification-dots.level2 div:nth-of-type(2) {
     background-color: #ff9700 !important;
-  }
-
-  .verification-dots.level3 div {
-    background-color: #10a65e !important;
   }
 
   .verification-dots.level1 div:nth-of-type(1) {
@@ -141,12 +141,12 @@
   }
 
   #conversation-chat .chat .message-in .message-body {
-    background-color: #666666 !important;
+    background-color: #666 !important;
   }
 
   #conversation-chat .chat .message-in .bubble-triangle::before,
   #conversation-chat .chat .message-in .bubble-triangle::after {
-    background-color: #666666 !important;
+    background-color: #666 !important;
   }
 
   #conversation-chat .chat .message-out .message-body {
@@ -286,8 +286,7 @@
     background: #272727 !important;
   }
 
-  md-dialog-content#dialogContent_my-threema-id-dialog
-    > div.md-dialog-content.center {
+  md-dialog-content#dialogContent_my-threema-id-dialog > div.md-dialog-content.center {
     background-color: #fff !important;
   }
 
