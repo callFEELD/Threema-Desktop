@@ -34,6 +34,7 @@
     ],
     "extraFiles": [
       "assets/css/override.css",
+      "assets/css/darkMode.css",
       "assets/img/Threema.png",
       "assets/img/threema_32.png",
       "assets/img/threema_128.png"
