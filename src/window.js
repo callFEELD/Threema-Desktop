@@ -14,7 +14,8 @@
 const{
     WINDOW_SETTINGS,
     THREEMA_WEB_URL,
-    CSS_OVERRIDE_FILE
+    CSS_OVERRIDE_FILE,
+    CSS_DARKMODE_FILE
 } = require("./vars.js");
 
 // import of electron modules
