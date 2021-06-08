@@ -65,7 +65,6 @@ function addWindowViewEvents(window) {
     let contents = window.webContents;
     contents.on("did-finish-load", function () {
         contents.insertCSS(overrideCSS);
-        // TODO: temporary:
         contents.insertCSS(darkModeCSS);
     });
 
