@@ -24,6 +24,7 @@ let BROWSER_WIDTH_MIN =   400;
 let BROWSER_HEIGHT_MIN =  400;
 let THREEMA_ICON =        "assets/img/threema_32.png";
 let CSS_OVERRIDE_FILE =   "assets/css/override.css";
+let CSS_DARKMODE_FILE =   "assets/css/darkMode.css";
 // main window settings
 let WINDOW_SETTINGS = {
     title: TITLE,

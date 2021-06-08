@@ -1,0 +1,7 @@
+#main {
+    background-color: #121212;
+}
+
+body.md-default-theme, body, html.md-default-theme, html {
+  color: rgba(255, 255, 255, 0.87);
+}

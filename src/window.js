@@ -54,11 +54,18 @@ function addWindowViewEvents(window) {
     let overrideCSS = fs.readFileSync(filePath, {
         encoding: "utf-8"
     });
+    // load the dark mode css file
+    filePath = path.join(CSS_DARKMODE_FILE);
+    let darkModeCSS = fs.readFileSync(filePath, {
+        encoding: "utf-8"
+    });
 
     // when the content is loaded, insert the override css
     let contents = window.webContents;
     contents.on("did-finish-load", function () {
         contents.insertCSS(overrideCSS);
+        // TODO: temporary:
+        contents.insertCSS(darkModeCSS);
     });
 
     // open links in the default browser
