@@ -213,11 +213,13 @@
     color: #d0d0d0 !important;
   }
 
-  .material-icons.md-dark.user-ack, .material-icons.md-medium-dark.user-ack {
+  .material-icons.md-dark.user-ack,
+  .material-icons.md-medium-dark.user-ack {
     color: #4cb050 !important;
   }
 
-  .material-icons.md-dark.user-dec, .material-icons.md-medium-dark.user-dec {
+  .material-icons.md-dark.user-dec,
+  .material-icons.md-medium-dark.user-dec {
     color: #ff9700 !important;
   }
 
