@@ -1,7 +1,154 @@
-#main {
-    background-color: #121212;
-}
+@media (prefers-color-scheme: dark) {
+    /* login: */
+    #main {
+        background-color: #121212 !important;
+    }
 
-body.md-default-theme, body, html.md-default-theme, html {
-  color: rgba(255, 255, 255, 0.87);
+    body.md-default-theme,
+    body,
+    html.md-default-theme,
+    html {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+
+    md-input-container.md-threema-theme .md-input,
+    md-input-container.md-threema-theme .md-input::placeholder {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+
+    /* chat selection list: */
+    #navigation-header {
+        background-color: #222222 !important;
+    }
+
+    #navigation-conversations {
+        background-color: #121212 !important;
+    }
+
+    #navigation-conversations .conversation-wrapper .conversation {
+        border-left: 8px solid #121212 !important;
+    }
+
+    #navigation-conversations .conversation-wrapper .conversation.active,
+    #navigation-conversations .conversation-wrapper .conversation:hover {
+        border-color: #222222 !important;
+        background-color: #222222 !important;
+    }
+
+    #navigation-conversations
+        .conversation-wrapper
+        .conversation
+        .conversation-box
+        .receiver-box {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+    #navigation-conversations
+        .conversation-wrapper
+        .conversation
+        .conversation-box
+        .message-box
+        .latest-message {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    #navigation-conversations .conversation-wrapper .conversation.starred {
+        border-image: linear-gradient(
+                to right,
+                #ffc107,
+                #ffc107 50%,
+                #121212 50%,
+                #121212 100%
+            )
+            1 100% !important;
+    }
+    #navigation-conversations .conversation-wrapper .conversation.unread {
+        border-image: linear-gradient(
+                to right,
+                #f44336,
+                #f44336 50%,
+                #121212 50%,
+                #121212 100%
+            )
+            1 100% !important;
+    }
+
+    #navigation-conversations .conversation-wrapper {
+        border-bottom: 1px solid #222222 !important;
+    }
+
+    .material-icons.md-dark {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+    .material-icons.md-medium-dark {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .message-icon img {
+        filter: invert(0.8) !important;
+    }
+
+    /* chat history: */
+    #messenger #detail > div.ng-scope .detail-header {
+        background-color: #121212 !important;
+    }
+
+    compose-area > div:first-child > div:nth-of-type(2) {
+        background-color: #121212 !important;
+        border: 1px solid #323232 !important;
+    }
+
+    .md-button.md-icon-button.header-back-button md-icon {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+    md-icon img {
+        filter: invert(0.8) !important;
+    }
+
+    #conversation #conversation-footer {
+        background-color: #222 !important;
+        z-index: 2;
+    }
+
+    #conversation-chat .chat .message-in .message-body {
+        background-color: #121212 !important;
+    }
+    #conversation-chat .chat .message-in .bubble-triangle::before,
+    #conversation-chat .chat .message-in .bubble-triangle::after {
+        background-color: #121212 !important;
+    }
+
+    #conversation-chat .chat .message-out .message-body {
+        background-color: hsl(103, 44%, 11%) !important;
+    }
+    #conversation-chat .chat .message-out .bubble-triangle::before,
+    #conversation-chat .chat .message-out .bubble-triangle::after {
+        background-color: hsl(103, 44%, 11%) !important;
+    }
+
+    #conversation-chat .chat .message-status .message-body {
+        background-color: hsl(50, 81%, 8%) !important;
+    }
+
+    .message-body .message-quote .message-quote-content {
+        border-color: rgba(255, 255, 255, 0.87) !important;
+    }
+    .message-body .message-quote .message-name {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+
+    #conversation {
+        background-image: none !important;
+        background-color: #222 !important;
+    }
+    #conversation::after {
+        background-image: url("../img/wallpaper_light.png?") !important;
+        opacity: 0.1;
+        content: " ";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
 }
