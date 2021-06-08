@@ -209,6 +209,10 @@
     background-color: #1f1f1f !important;
   }
 
+  #conversation-chat .chat .message-body .message-info {
+    color: #d0d0d0 !important;
+  }
+
   /* menu: */
   md-menu-content.md-threema-theme {
     background-color: #2c2c2c !important;
