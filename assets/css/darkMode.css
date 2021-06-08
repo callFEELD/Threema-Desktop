@@ -71,8 +71,8 @@
   #navigation-conversations .conversation-wrapper .conversation.unread {
     border-image: linear-gradient(
         to right,
-        #f44336,
-        #f44336 50%,
+        #F44236,
+        #F44236 50%,
         #121212 50%,
         #121212 100%
       )
@@ -235,7 +235,7 @@
   }
 
   #messenger #detail > div.ng-scope {
-    background-color: #121212 !important;
+    background-color: #272727 !important;
   }
 
   .md-button.md-threema-theme.md-raised {
@@ -278,5 +278,9 @@
   md-dialog-content#dialogContent_my-threema-id-dialog
     > div.md-dialog-content.center {
     background-color: #fff !important;
+  }
+
+  md-icon > img[alt="QR"] {
+    filter: invert(1) saturate(1%) brightness(1000%) !important;
   }
 }
