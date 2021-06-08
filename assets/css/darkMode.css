@@ -16,6 +16,11 @@
         color: rgba(255, 255, 255, 0.87) !important;
     }
 
+    md-dialog.md-threema-theme {
+        color: rgba(255, 255, 255, 0.87) !important;
+        background-color: #121212 !important;
+    }
+
     /* chat selection list: */
     #navigation-header {
         background-color: #222222 !important;
@@ -25,12 +30,14 @@
         background-color: #121212 !important;
     }
 
-    #navigation-conversations .conversation-wrapper .conversation {
+    #navigation-conversations .conversation-wrapper .conversation,
+    #navigation-contacts .contact {
         border-left: 8px solid #121212 !important;
     }
 
     #navigation-conversations .conversation-wrapper .conversation.active,
-    #navigation-conversations .conversation-wrapper .conversation:hover {
+    #navigation-conversations .conversation-wrapper .conversation:hover,
+    #navigation-contacts .contact:hover {
         border-color: #222222 !important;
         background-color: #222222 !important;
     }
@@ -86,6 +93,30 @@
         filter: invert(0.8) !important;
     }
 
+    #navigation-header .search input[type="search"] {
+        background-color: #121212 !important;
+        border: 1px solid #323232 !important;
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+
+    .verification-dots div {
+        background-color: #222 !important;
+    }
+    .verification-dots.level2 div:nth-of-type(1),
+    .verification-dots.level2 div:nth-of-type(2) {
+        background-color: #ff9800 !important;
+    }
+    .verification-dots.level3 div {
+        background-color: #05a63f !important;
+    }
+    .verification-dots.level1 div:nth-of-type(1) {
+        background-color: #f44336 !important;
+    }
+
+    #messenger.show-detail #navigation {
+        border-right: 1px solid #323232 !important;
+    }
+
     /* chat history: */
     #messenger #detail > div.ng-scope .detail-header {
         background-color: #121212 !important;
@@ -139,7 +170,7 @@
         background-image: none !important;
         background-color: #222 !important;
     }
-    #conversation::after {
+    #conversation::before {
         background-image: url("../img/wallpaper_light.png?") !important;
         opacity: 0.1;
         content: " ";
@@ -149,6 +180,103 @@
         top: 0;
         width: 100%;
         height: 100%;
-        z-index: 1;
+    }
+
+    .twemoji-picker {
+        background-color: #222 !important;
+    }
+    .twemoji-picker .tab label {
+        border: 1px solid #222 !important;
+        background: #222 !important;
+    }
+    .twemoji-picker .tab [type="radio"]:checked ~ label {
+        background: #121212 !important;
+    }
+    .twemoji-picker .tab .content {
+        border: 1px solid #121212 !important;
+        background: #121212 !important;
+    }
+
+    #conversation #conversation-quote {
+        background-color: #121212 !important;
+    }
+
+    /* menu: */
+    md-menu-content.md-threema-theme {
+        background-color: #121212 !important;
+    }
+
+    md-menu-content.md-threema-theme md-menu-item {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+
+    md-menu-content.md-threema-theme md-menu-item md-icon {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .md-subheader.md-threema-theme {
+        background-color: #222 !important;
+    }
+
+    .md-button.md-threema-theme.md-primary {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    md-dialog.md-default-theme,
+    md-dialog {
+        color: rgba(255, 255, 255, 0.87) !important;
+        background-color: #121212 !important;
+    }
+
+    /* profiles: */
+    md-card.md-threema-theme {
+        color: rgba(255, 255, 255, 0.87) !important;
+        background-color: #121212 !important;
+    }
+
+    #messenger #detail > div.ng-scope {
+        background-color: #222 !important;
+    }
+
+    .md-button.md-threema-theme.md-raised {
+        background-color: #222 !important;
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+    .md-button.md-threema-theme.md-warn.md-fab,
+    .md-button.md-threema-theme.md-warn.md-raised {
+        background-color: rgb(255, 87, 34) !important;
+    }
+
+    #detail md-icon.md-threema-theme {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    md-autocomplete.md-threema-theme {
+        background: #121212 !important;
+    }
+    md-autocomplete.md-threema-theme input {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .md-button.md-threema-theme.md-primary.md-fab,
+    .md-button.md-threema-theme.md-primary.md-raised {
+        color: #000 !important;
+        background-color: rgba(255, 255, 255, 0.87) !important;
+    }
+
+    .avatar-area.overview > .avatar-image {
+        background-color: #323232 !important;
+    }
+
+    .md-autocomplete-suggestions-container.md-threema-theme li {
+        color: rgba(255, 255, 255, 0.87) !important;
+    }
+    .md-autocomplete-suggestions-container.md-threema-theme {
+        background: #121212 !important;
+    }
+
+    md-dialog-content#dialogContent_my-threema-id-dialog
+        > div.md-dialog-content.center {
+        background-color: #fff !important;
     }
 }
