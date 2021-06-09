@@ -137,7 +137,6 @@
 
   #conversation #conversation-footer {
     background-color: #121212 !important;
-    z-index: 2;
   }
 
   #conversation-chat .chat .message-in .message-body {
@@ -173,18 +172,6 @@
   #conversation {
     background-image: none !important;
     background-color: #121212 !important;
-  }
-
-  #conversation::before {
-    background-image: url("../img/wallpaper_light.png?") !important;
-    opacity: 0.12;
-    content: " ";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
   }
 
   .twemoji-picker {
