@@ -223,6 +223,10 @@
     color: #ff9700 !important;
   }
 
+  compose-area > div:first-child > div:nth-of-type(2) div.compose:empty::before {
+    color: #939393 !important;
+  }
+
   /* menu: */
   md-menu-content.md-threema-theme {
     background-color: #2c2c2c !important;
