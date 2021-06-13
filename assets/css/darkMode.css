@@ -1,91 +1,106 @@
 @media (prefers-color-scheme: dark) {
   :root {
-    --colorwhite: #fff;
-    --colorblack: #000;
-    --color12: #121212;
-    --color27: #272727;
-    --color32: #323232;
-    --color30: #303030;
-    --color6: #666;
-    --colorffc107: #ffc107;
-    --color9ba0a6: #9ba0a6;
-    --colorf5f2: #f5f2f2;
-    --colorf44236: #f44236;
-    --color10a65e: #10a65e;
-    --colorff9700: #ff9700;
-    --colore0: #e0e0e0;
-    --colora5: #a5a5a5;
-    --colord0: #d0d0d0;
-    --color1f: #1f1f1f;
+    --color-black: #000;
+    --color-main-background: #121212;
+    --color-bright-background: #272727;
+    --color-compose-quote-background: #1f1f1f;
+    --color-menu-background: #2c2c2c;
+    --color-outgoing-message-background: #303030;
+    --color-more-bright-background: #323232;
+    --color-incoming-message-background: #666;
+    --color-message-input-text: #939393;
+    --color-latest-message: #9ba0a6;
+    --color-quote-author: #a5a5a5;
+    --color-button-text: #b8b8b8;
+    --color-message-meta: #d0d0d0;
+    --color-white: #fff;
+
+    /* ??: */
     --color35: #353535;
-    --colorb8: #b8b8b8;
     --colore5: #e5e5e5;
-    --color93: #939393;
-    --color2c: #2c2c2c;
-    --color4cb050: #4cb050;
-    --colorece7c9: #ece7c9;
-    --colorff5722: #ff5722;
+
+    /* chat list mark: */
+    --color-starred: #ffc107;
+    --color-unread: #f44236;
+
+    /* verification dots: */
+    --color-verification-background: #e0e0e0;
+    --color-verification-level-1: #f44236;
+    --color-verification-level-2: #ff9700;
+    --color-verification-level-3: #10a65e;
+
+    /* message reactions / "thumbs": */
+    --color-acknowledge: #4cb050;
+    --color-decline: #ff9700;
+
+    /* general purpose accent color: */
+    --color-accent: #4cb050;
+
+    --color-warning-button: #ff5722;
+
+    --color-status-message-background: #ece7cb;
+    --color-status-message-text: #5f6267;
   }
 
   /* login: */
   #main {
-    background-color: var(--color12) !important;
+    background-color: var(--color-main-background) !important;
   }
 
   body.md-default-theme,
   body,
   html.md-default-theme,
   html {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   md-input-container.md-threema-theme .md-input,
   md-input-container.md-threema-theme .md-input::placeholder {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   md-dialog.md-threema-theme {
-    color: var(--colorwhite) !important;
-    background-color: var(--color12) !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-main-background) !important;
   }
 
   /* chat selection list: */
   #navigation-header {
-    background-color: var(--color27) !important;
+    background-color: var(--color-bright-background) !important;
   }
 
   #navigation-conversations {
-    background-color: var(--color12) !important;
+    background-color: var(--color-main-background) !important;
   }
 
   #navigation-conversations .conversation-wrapper .conversation,
   #navigation-contacts .contact {
-    border-left: 8px solid var(--color12) !important;
+    border-left: 8px solid var(--color-main-background) !important;
   }
 
   #navigation-conversations .conversation-wrapper .conversation.active,
   #navigation-conversations .conversation-wrapper .conversation:hover,
   #navigation-contacts .contact:hover {
-    border-color: var(--color27) !important;
-    background-color: var(--color27) !important;
+    border-color: var(--color-bright-background) !important;
+    background-color: var(--color-bright-background) !important;
   }
 
   #navigation-conversations .conversation-wrapper .conversation .conversation-box .receiver-box {
-    color: var(--colorf5f2) !important;
+    color: var(--color-white) !important;
   }
 
   #navigation-conversations .conversation-wrapper .conversation .conversation-box .message-box .latest-message {
-    color: var(--color9ba0a6) !important;
+    color: var(--color-latest-message) !important;
   }
 
   #navigation-conversations .conversation-wrapper .conversation.starred {
     border-image:
       linear-gradient(
         to right,
-        var(--colorffc107),
-        var(--colorffc107) 50%,
-        var(--color12) 50%,
-        var(--color12) 100%
+        var(--color-starred),
+        var(--color-starred) 50%,
+        var(--color-main-background) 50%,
+        var(--color-main-background) 100%
       )
       1 100% !important;
   }
@@ -94,24 +109,24 @@
     border-image:
       linear-gradient(
         to right,
-        var(--colorf44236),
-        var(--colorf44236) 50%,
-        var(--color12) 50%,
-        var(--color12) 100%
+        var(--color-unread),
+        var(--color-unread) 50%,
+        var(--color-main-background) 50%,
+        var(--color-main-background) 100%
       )
       1 100% !important;
   }
 
   #navigation-conversations .conversation-wrapper {
-    border-bottom: 1px solid var(--color12) !important;
+    border-bottom: 1px solid var(--color-main-background) !important;
   }
 
   .material-icons.md-dark {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   .material-icons.md-medium-dark {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   .message-icon img {
@@ -119,44 +134,44 @@
   }
 
   #navigation-header .search input[type="search"] {
-    background-color: var(--color27) !important;
-    border: 1px solid var(--color32) !important;
-    color: var(--colorwhite) !important;
+    background-color: var(--color-bright-background) !important;
+    border: 1px solid var(--color-more-bright-background) !important;
+    color: var(--color-white) !important;
   }
 
   .verification-dots div {
-    background-color: var(--colore0) !important;
+    background-color: var(--color-verification-background) !important;
   }
 
   .verification-dots.level3 div {
-    background-color: var(--color10a65e) !important;
+    background-color: var(--color-verification-level-3) !important;
   }
 
   .verification-dots.level2 div:nth-of-type(1),
   .verification-dots.level2 div:nth-of-type(2) {
-    background-color: var(--colorff9700) !important;
+    background-color: var(--color-verification-level-2) !important;
   }
 
   .verification-dots.level1 div:nth-of-type(1) {
-    background-color: var(--colorf44236) !important;
+    background-color: var(--color-verification-level-1) !important;
   }
 
   #messenger.show-detail #navigation {
-    border-right: 1px solid var(--color32) !important;
+    border-right: 1px solid var(--color-more-bright-background) !important;
   }
 
   /* chat history: */
   #messenger #detail > div.ng-scope .detail-header {
-    background-color: var(--color27) !important;
+    background-color: var(--color-bright-background) !important;
   }
 
   compose-area > div:first-child > div:nth-of-type(2) {
-    background-color: var(--color27) !important;
-    border: 1px solid var(--color32) !important;
+    background-color: var(--color-bright-background) !important;
+    border: 1px solid var(--color-more-bright-background) !important;
   }
 
   .md-button.md-icon-button.header-back-button md-icon {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   md-icon img {
@@ -164,103 +179,107 @@
   }
 
   #conversation #conversation-footer {
-    background-color: var(--color12) !important;
+    background-color: var(--color-main-background) !important;
   }
 
   #conversation-chat .chat .message-in .message-body {
-    background-color: var(--color6) !important;
+    background-color: var(--color-incoming-message-background) !important;
   }
 
   #conversation-chat .chat .message-in .bubble-triangle::before,
   #conversation-chat .chat .message-in .bubble-triangle::after {
-    background-color: var(--color6) !important;
+    background-color: var(--color-incoming-message-background) !important;
   }
 
   #conversation-chat .chat .message-out .message-body {
-    background-color: var(--color30) !important;
+    background-color: var(--color-outgoing-message-background) !important;
   }
 
   #conversation-chat .chat .message-out .bubble-triangle::before,
   #conversation-chat .chat .message-out .bubble-triangle::after {
-    background-color: var(--color30) !important;
+    background-color: var(--color-outgoing-message-background) !important;
   }
 
   #conversation-chat .chat .message-status .message-body {
-    background-color: var(--colorece7c9) !important;
+    background-color: var(--color-status-message-background) !important;
+  }
+
+  #conversation-chat .chat .message-status .message-body .message-text span {
+    color: var(--color-status-message-text) !important;
   }
 
   .message-body .message-quote .message-quote-content {
-    border-color: var(--color4cb050) !important;
+    border-color: var(--color-accent) !important;
   }
 
   .message-body .message-quote .message-name {
-    color: var(--colora5) !important;
+    color: var(--color-quote-author) !important;
   }
 
   #conversation {
     background-image: none !important;
-    background-color: var(--color12) !important;
+    background-color: var(--color-main-background) !important;
   }
 
   .twemoji-picker {
-    background-color: var(--color27) !important;
+    background-color: var(--color-bright-background) !important;
   }
 
   .twemoji-picker .tab label {
-    border: 1px solid var(--color27) !important;
-    background: var(--color27) !important;
+    border: 1px solid var(--color-bright-background) !important;
+    background: var(--color-bright-background) !important;
   }
 
   .twemoji-picker .tab [type="radio"]:checked ~ label {
-    background: var(--color12) !important;
+    background: var(--color-main-background) !important;
   }
 
   .twemoji-picker .tab .content {
-    border: 1px solid var(--color12) !important;
-    background: var(--color12) !important;
+    border: 1px solid var(--color-main-background) !important;
+    background: var(--color-main-background) !important;
   }
 
   #conversation #conversation-quote {
-    background-color: var(--color1f) !important;
+    background-color: var(--color-compose-quote-background) !important;
   }
 
   #conversation-chat .chat .message-body .message-info {
-    color: var(--colord0) !important;
+    color: var(--color-message-meta) !important;
   }
 
   .material-icons.md-dark.user-ack,
   .material-icons.md-medium-dark.user-ack {
-    color: var(--color4cb050) !important;
+    color: var(--color-acknowledge) !important;
   }
 
   .material-icons.md-dark.user-dec,
   .material-icons.md-medium-dark.user-dec {
-    color: var(--colorff9700) !important;
+    color: var(--color-decline) !important;
   }
 
   compose-area > div:first-child > div:nth-of-type(2) div.compose:empty::before {
-    color: var(--color93) !important;
+    color: var(--color-message-input-text) !important;
   }
 
   /* menu: */
   md-menu-content.md-threema-theme {
-    background-color: var(--color2c) !important;
+    background-color: var(--color-menu-background) !important;
   }
 
   md-menu-content.md-threema-theme md-menu-item {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   md-menu-content.md-threema-theme md-menu-item md-icon {
-    color: var(--colord0) !important;
+    color: var(--color-message-meta) !important;
   }
 
   .md-subheader.md-threema-theme {
-    background-color: var(--color27) !important;
+    background-color: var(--color-bright-background) !important;
   }
 
   .md-button.md-threema-theme.md-primary {
-    color: var(--colorb8) !important;
+    color: var(--color-button-text) !important;
   }
 
   md-dialog.md-default-theme,
@@ -271,56 +290,56 @@
 
   /* profiles: */
   md-card.md-threema-theme {
-    color: var(--colorwhite) !important;
-    background-color: var(--color12) !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-main-background) !important;
   }
 
   #messenger #detail > div.ng-scope {
-    background-color: var(--color27) !important;
+    background-color: var(--color-bright-background) !important;
   }
 
   .md-button.md-threema-theme.md-raised {
-    background-color: var(--color27) !important;
-    color: var(--colorwhite) !important;
+    background-color: var(--color-bright-background) !important;
+    color: var(--color-white) !important;
   }
 
   .md-button.md-threema-theme.md-warn.md-fab,
   .md-button.md-threema-theme.md-warn.md-raised {
-    background-color: var(--colorff5722) !important;
+    background-color: var(--color-warning-button) !important;
   }
 
   #detail md-icon.md-threema-theme {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   md-autocomplete.md-threema-theme {
-    background: var(--color27) !important;
+    background: var(--color-bright-background) !important;
   }
 
   md-autocomplete.md-threema-theme input {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   .md-button.md-threema-theme.md-primary.md-fab,
   .md-button.md-threema-theme.md-primary.md-raised {
-    color: var(--colorblack) !important;
-    background-color: var(--colorwhite) !important;
+    color: var(--color-black) !important;
+    background-color: var(--color-white) !important;
   }
 
   .avatar-area.overview > .avatar-image {
-    background-color: var(--color32) !important;
+    background-color: var(--color-more-bright-background) !important;
   }
 
   .md-autocomplete-suggestions-container.md-threema-theme li {
-    color: var(--colorwhite) !important;
+    color: var(--color-white) !important;
   }
 
   .md-autocomplete-suggestions-container.md-threema-theme {
-    background: var(--color27) !important;
+    background: var(--color-bright-background) !important;
   }
 
   md-dialog-content#dialogContent_my-threema-id-dialog > div.md-dialog-content.center {
-    background-color: var(--colorwhite) !important;
+    background-color: var(--color-white) !important;
   }
 
   md-icon > img[alt="QR"] {
