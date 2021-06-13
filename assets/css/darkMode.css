@@ -14,24 +14,31 @@
     --color-button-text: #b8b8b8;
     --color-message-meta: #d0d0d0;
     --color-white: #fff;
+
     /* ??: */
     --color35: #353535;
     --colore5: #e5e5e5;
+
     /* chat list mark: */
     --color-starred: #ffc107;
     --color-unread: #f44236;
+
     /* verification dots: */
     --color-verification-background: #e0e0e0;
     --color-verification-level-1: #f44236;
     --color-verification-level-2: #ff9700;
     --color-verification-level-3: #10a65e;
+
     /* message reactions / "thumbs": */
     --color-acknowledge: #4cb050;
     --color-decline: #ff9700;
+
     /* general purpose accent color: */
     --color-accent: #4cb050;
+
     /* warning button: */
     --color-warning-button: #ff5722;
+
     /* status message: */
     --color-status-message-background: #ece7cb;
     --color-status-message-text: #5f6267;
