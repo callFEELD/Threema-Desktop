@@ -24,6 +24,7 @@ let BROWSER_WIDTH_MIN =   400;
 let BROWSER_HEIGHT_MIN =  400;
 let THREEMA_ICON =        "assets/img/threema_32.png";
 let CSS_OVERRIDE_FILE =   "assets/css/override.css";
+let CSS_DARKMODE_FILE =   "assets/css/darkMode.css";
 // main window settings
 let WINDOW_SETTINGS = {
     title: TITLE,
@@ -52,5 +53,6 @@ module.exports.BROWSER_WIDTH_MIN = BROWSER_WIDTH_MIN;
 module.exports.BROWSER_HEIGHT_MIN = BROWSER_HEIGHT_MIN;
 module.exports.THREEMA_ICON = THREEMA_ICON;
 module.exports.CSS_OVERRIDE_FILE = CSS_OVERRIDE_FILE;
+module.exports.CSS_DARKMODE_FILE = CSS_DARKMODE_FILE;
 
 module.exports.WINDOW_SETTINGS = WINDOW_SETTINGS;

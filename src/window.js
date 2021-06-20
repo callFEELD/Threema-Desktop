@@ -14,7 +14,8 @@
 const{
     WINDOW_SETTINGS,
     THREEMA_WEB_URL,
-    CSS_OVERRIDE_FILE
+    CSS_OVERRIDE_FILE,
+    CSS_DARKMODE_FILE
 } = require("./vars.js");
 
 // import of electron modules
@@ -54,11 +55,17 @@ function addWindowViewEvents(window) {
     let overrideCSS = fs.readFileSync(filePath, {
         encoding: "utf-8"
     });
+    // load the dark mode css file
+    filePath = path.join(CSS_DARKMODE_FILE);
+    let darkModeCSS = fs.readFileSync(filePath, {
+        encoding: "utf-8"
+    });
 
     // when the content is loaded, insert the override css
     let contents = window.webContents;
     contents.on("did-finish-load", function () {
         contents.insertCSS(overrideCSS);
+        contents.insertCSS(darkModeCSS);
     });
 
     // open links in the default browser
